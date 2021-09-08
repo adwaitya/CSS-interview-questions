@@ -22,11 +22,15 @@ Now that you are picturing every single page element as a block of pixels, we ca
 ```
 
 ## static
-It is the default value of position property. The element is rendered in order of placement. It doesn't break the flow of the document. top/left/bottom/right attribute don't work with static position property.
+This is the default value for elements. The element is positioned according to the normal flow of the document. The left, right, top, bottom and z-index properties do not affect an element with position: static.
+
 Why to use: It will scale on all browser
 
 ## relative
 Elements with position: relative remain in the normal flow of the document. But, unlike static elements, the left, right, top, bottom and z-index properties affect the position of the element. An offset, based on the values of left, right, top and bottom properties, is applied to the element relative to itself.
+
+Why to use: Use for parent element of an absolute positioned element
+
 
 ## absolute
 Elements with position: absolute are positioned relative to their parent elements. In this case, the element is removed from the normal document flow. The other elements will behave as if that element is not in the document. No space is created for the element in the page layout. The values of left, top, bottom and right determine the final position of the element.
@@ -35,10 +39,19 @@ One thing to note is that an element with position: absolute is positioned relat
 
 If the closest parent element is not positioned, it is positioned relative to the next parent element that is positioned. If there's no positioned ancestor element, it is positioned relative to the <html> element.
 
+Why to use: Use when to position element according to parent element
+
 ## fixed
 A fixed position element is positioned relative to the viewport, or the browser window itself. The viewport doesn’t change when the window is scrolled, so a fixed positioned element will stay right where it is when the page is scrolled.
 
 This might be used for something like a navigation bar that you want to remain visible at all times regardless of the pages scroll position. The concern with fixed positioning is that it can cause situations where the fixed element overlaps content such that is is inaccessible. The trick is having enough space to avoid that, and tricks like this.
 
+Why to use: Use when you want the header to be fixed on the top of the viewport.
+
+
 ## sticky
 Sticky positioning is really unique! A sticky element will just sit there like a static element, but as you scroll past it, if it’s parent element has room (usually: extra height) the sticky element will behave as if it’s fixed until that parent element is out of room. It sounds weird in words like that, but it’s easy to see what’s happening
+
+
+Why to use: When you want something to stick after a certain click like Buy Now, Login.
+
